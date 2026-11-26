@@ -1,1 +1,295 @@
-placeholder
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raddish Kids Cost Calculator: Price Per Box by Plan (2026) | ZoZoPeak Tools</title>
+<meta name="description" content="Compare Raddish Kids plans ($28.95 monthly, $155.70 for 6 months, $275.40 for 12 months) and see what each one costs per box before tax, including the free apron offer and the 3FREE promo. Prices verified November 26, 2026.">
+<link rel="canonical" href="https://valba4668.github.io/deal-pages/raddish-kids-cost-calculator/">
+<link rel="alternate" hreflang="en" href="https://valba4668.github.io/deal-pages/raddish-kids-cost-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://valba4668.github.io/deal-pages/raddish-kids-cost-calculator/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Raddish Kids Cost Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Calculates the real cost per box of each Raddish Kids subscription plan, including prepay discounts, the sibling add-on, and the 3FREE promo.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "isPartOf": { "@type": "WebPage", "name": "Raddish Kids Cost Calculator: Price Per Box by Plan" }
+}
+</script>
+<style>
+:root{
+  --ink:#0F2347; --ink-deep:#0A1830; --paper:#F6F2EA; --paper-2:#EFE8DA; --plate:#FFFFFF;
+  --rule:#E2DACB; --text:#14203A; --text-2:#4A5470; --gold:#D4AF37; --gold-soft:#F0D27A;
+  --gold-ink:#7A5C0E; --ok:#1F6B4A; --err:#A03232; --on-ink:#F3EFE7; --radius-sm:12px; --radius-lg:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--paper);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;color:var(--ink);line-height:1.2}
+a{color:inherit}
+.container{max-width:900px;margin:0 auto;padding:0 16px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.site-header{background:var(--ink-deep);color:var(--on-ink);padding:14px 0}
+.header-inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--gold);text-decoration:none;font-weight:600}
+.nav-links a{color:var(--on-ink);text-decoration:none;font-size:.95rem;margin-left:16px}
+.nav-links a:hover{color:var(--gold)}
+.hero{background:linear-gradient(135deg,var(--ink-deep) 0%,var(--ink) 100%);color:var(--on-ink);padding:36px 0 44px;border-radius:0 0 var(--radius-lg) var(--radius-lg)}
+.hero h1{color:var(--on-ink);font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:10px}
+.hero p{opacity:.9;max-width:640px}
+.hero .verified{color:var(--gold-soft);font-size:.85rem;margin-top:8px;display:block}
+.card{background:var(--plate);border:1px solid var(--rule);border-radius:var(--radius-sm);padding:24px;margin:24px 0}
+.calc-card{margin-top:-28px;position:relative;box-shadow:0 8px 24px rgba(10,24,48,.10)}
+fieldset{border:none;margin-bottom:16px}
+legend,label.field-label{font-weight:600;color:var(--ink);margin-bottom:8px;display:block;font-size:.95rem}
+.plan-options{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:640px){.plan-options{grid-template-columns:repeat(3,1fr)}}
+.plan-option{border:2px solid var(--rule);border-radius:var(--radius-sm);padding:12px 14px;cursor:pointer;display:block;transition:border-color .15s}
+.plan-option:hover{border-color:var(--gold-soft)}
+.plan-option input{margin-right:8px;accent-color:var(--gold-ink)}
+.plan-option .p-name{font-weight:600;color:var(--ink)}
+.plan-option .p-price{font-size:.9rem;color:var(--text-2)}
+.plan-option.selected{border-color:var(--gold);background:#FDF9EC}
+input[type=number]{width:100%;max-width:220px;padding:10px 12px;border:2px solid var(--rule);border-radius:8px;font-size:1rem;font-family:inherit}
+input[type=number][aria-invalid=true]{border-color:var(--err)}
+.check-row{display:flex;align-items:flex-start;gap:10px;margin:10px 0}
+.check-row input{margin-top:5px;accent-color:var(--gold-ink)}
+.check-row small{color:var(--text-2);display:block}
+.error{color:var(--err);font-size:.9rem;margin-top:6px;font-weight:500}
+.results{background:var(--paper-2);border-left:4px solid var(--gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:18px 20px;margin-top:18px}
+.results h2{font-family:'Public Sans',sans-serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:10px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;font-size:.95rem}
+@media(min-width:640px){.result-grid{grid-template-columns:repeat(4,1fr)}}
+.result-grid .big{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;color:var(--ink);display:block}
+.result-grid .lbl{font-size:.8rem;color:var(--text-2);text-transform:uppercase;letter-spacing:.4px}
+.savings{color:var(--ok);font-weight:600}
+.honest-note{font-size:.85rem;color:var(--text-2);margin-top:12px}
+.example{background:#FDF9EC;border:1px dashed var(--gold);border-radius:var(--radius-sm);padding:16px 18px;font-size:.95rem}
+.offer-card{border:2px solid var(--gold);background:linear-gradient(180deg,#FFFDF6,#FDF6E3)}
+.offer-card h2{margin-bottom:6px}
+.offer-tag{display:inline-block;background:var(--gold);color:var(--ink-deep);font-weight:600;font-size:.8rem;padding:3px 10px;border-radius:20px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+.offer-card .who{font-size:.95rem;margin:8px 0}
+.offer-card .terms{font-size:.85rem;color:var(--text-2);border-top:1px solid var(--rule);padding-top:10px;margin-top:10px}
+.disclosure{font-size:.8rem;color:var(--text-2);margin:14px 0 8px;font-style:italic}
+.btn{display:inline-block;background:var(--gold);color:var(--ink-deep);font-weight:600;padding:12px 26px;border-radius:10px;text-decoration:none;font-size:1rem}
+.btn:hover{background:var(--gold-soft)}
+table{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:8px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--rule)}
+th{color:var(--ink);font-family:'Public Sans',sans-serif;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.4px}
+td.num,th.num{text-align:right}
+.faq h3{font-size:1.05rem;margin:18px 0 6px}
+.privacy{font-size:.8rem;color:var(--text-2);margin-top:14px}
+.site-footer{background:var(--ink-deep);color:var(--on-ink);padding:24px 0;margin-top:40px;font-size:.85rem}
+.site-footer a{color:var(--gold-soft)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="https://zozopeak.com">zozopeak <span style="font-size:.7em;color:var(--on-ink)">tools</span></a>
+    <nav class="nav-links">
+      <a href="https://zozopeak.com/vault">Vault</a>
+      <a href="https://zozopeak.com/hot-deals">Offers</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Raddish Kids Cost Calculator</h1>
+    <p>See what each Raddish Kids plan costs per box before tax, including prepay discounts, the sibling bundle, and the current 3FREE promo.</p>
+    <span class="verified">Plan prices verified on raddishkids.com on November 26, 2026.</span>
+  </div>
+</section>
+
+<main class="container">
+
+  <section class="card calc-card" aria-labelledby="calc-h">
+    <h2 id="calc-h" style="font-size:1.3rem;margin-bottom:16px">Calculate your cost per box</h2>
+    <form id="calc-form" novalidate>
+      <fieldset>
+        <legend>Choose a plan</legend>
+        <div class="plan-options" id="plan-options">
+          <label class="plan-option">
+            <input type="radio" name="plan" value="monthly">
+            <span class="p-name">Monthly</span><br>
+            <span class="p-price">$28.95 / month, renews monthly, turn off renewal anytime</span>
+          </label>
+          <label class="plan-option">
+            <input type="radio" name="plan" value="six">
+            <span class="p-name">6 months</span><br>
+            <span class="p-price">$155.70 upfront ($25.95 / box) + free apron</span>
+          </label>
+          <label class="plan-option">
+            <input type="radio" name="plan" value="twelve">
+            <span class="p-name">12 months</span><br>
+            <span class="p-price">$275.40 upfront ($22.95 / box) + free apron</span>
+          </label>
+        </div>
+        <p class="error" id="plan-error" role="alert" hidden></p>
+      </fieldset>
+
+      <fieldset id="months-field" hidden>
+        <label class="field-label" for="months">Months you plan to keep the monthly plan (1&ndash;36)</label>
+        <input type="number" id="months" name="months" inputmode="numeric" min="1" max="36" step="1" value="6" aria-describedby="months-error">
+        <p class="error" id="months-error" role="alert" hidden></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Options</legend>
+        <div class="check-row">
+          <input type="checkbox" id="sibling" name="sibling">
+          <label for="sibling">Sibling bundle (+$5 / month per sibling)<small>Extra culinary tool and apron patch each month; the $5 per month is paid upfront with the plan.</small></label>
+        </div>
+        <div class="check-row" id="promo-row" hidden>
+          <input type="checkbox" id="promo3free" name="promo3free">
+          <label for="promo3free">Promo code 3FREE ($68.85 off the 12-month plan)<small>Pay for 9 of 12 months: $206.55 instead of $275.40. New customers only, one week only; verified at Raddish checkout on November 26, 2026. Promos change, confirm at checkout.</small></label>
+        </div>
+      </fieldset>
+
+      <div class="results" id="results" aria-live="polite" hidden>
+        <h2>Your estimated plan cost, before tax</h2>
+        <div class="result-grid">
+          <div><span class="big" id="r-total"></span><span class="lbl">Total cost</span></div>
+          <div><span class="big" id="r-perbox"></span><span class="lbl">Cost per box</span></div>
+          <div><span class="big" id="r-permonth"></span><span class="lbl">Per month</span></div>
+          <div><span class="big savings" id="r-savings"></span><span class="lbl">Saved vs month-to-month</span></div>
+        </div>
+        <p class="honest-note" id="r-note"></p>
+        <p class="honest-note">This is the cost of the subscription plan itself, from Raddish's own published prices, before tax and before any international shipping fees. It is not the full checkout total, and not a resale or market price for the boxes. The saving compares this plan against buying the same number of boxes month-to-month.</p>
+      </div>
+    </form>
+
+    <div class="example" style="margin-top:16px">
+      <strong>Worked example (defaults):</strong> the 12-month plan costs $275.40 upfront for 12 boxes, or $22.95 per box. With promo code 3FREE (new customers only, verified at checkout) the same 12 boxes cost $206.55, or $17.21 per box. Buying the same 12 boxes month-to-month would cost $347.40, so the prepaid plan with the promo is $140.85 less. The 12-month plan also includes a free bonus apron.
+    </div>
+  </section>
+
+  <section class="card offer-card" aria-labelledby="offer-h">
+    <span class="offer-tag">Vault deal &middot; US</span>
+    <h2 id="offer-h">Free bonus apron, standard with the 6 and 12 month plans</h2>
+    <p class="who"><strong>Why this is next to the calculator:</strong> the calculator shows the 6 and 12 month plans are the cheapest per box, and Raddish includes a free bonus apron ($15 value) with both as a standard benefit, no code needed. If the math points you to a prepaid plan, the apron comes with it.</p>
+    <p class="who"><strong>Who it suits:</strong> families with kids roughly ages 4 to 14+ who will cook regularly enough to use a monthly kit. If you are unsure, run the monthly plan in the calculator first: one month at $28.95 is the cheapest way to test it.</p>
+    <p class="terms">Terms: one free apron ($15 value) is included with 6 and 12 month memberships as a standard benefit, confirmed in Raddish's checkout on November 26, 2026. All memberships include Raddish+ digital access. Promo codes like 3FREE are for new customers only and time-limited; a promo applies to the first term, and prepaid plans renew at full price ($275.40 for 12 months) unless you turn off renewal. Ingredients are not included in the kits.</p>
+    <p class="disclosure">Affiliate link: if you buy through it, ZoZoPeak may earn a commission at no extra cost to you.</p>
+    <a class="btn" href="https://tatrck.com/h/1Hu30_KIUMrfSLbhQqmpUc5ECt4nCNHEOLPQ" rel="sponsored nofollow">Get the plan with the free apron &rarr;</a>
+  </section>
+
+  <section class="card" aria-labelledby="plans-h">
+    <h2 id="plans-h">Raddish Kids plans at a glance</h2>
+    <table>
+      <thead><tr><th>Plan</th><th class="num">You pay</th><th class="num">Per box</th><th>Extras</th></tr></thead>
+      <tbody>
+        <tr><td>Monthly</td><td class="num">$28.95 / month</td><td class="num">$28.95</td><td>Renews monthly; turn off renewal anytime; free shipping</td></tr>
+        <tr><td>6 months</td><td class="num">$155.70 upfront</td><td class="num">$25.95</td><td>Free bonus apron; free shipping</td></tr>
+        <tr><td>12 months</td><td class="num">$275.40 upfront</td><td class="num">$22.95</td><td>Free bonus apron; free shipping; 3FREE takes $68.85 off the first term</td></tr>
+      </tbody>
+    </table>
+    <p class="honest-note">Source: Raddish's plan builder and checkout, checked live on November 26, 2026. Prices can change; the checkout page is the final word.</p>
+  </section>
+
+  <section class="card" aria-labelledby="how-h">
+    <h2 id="how-h">How to use this calculator</h2>
+    <p><strong>Plan:</strong> pick monthly, 6 months, or 12 months. Prepaid plans are charged once, upfront. <strong>Months:</strong> only the monthly plan asks this, how long you expect to keep it (1 to 36). <strong>Sibling bundle:</strong> adds an extra culinary tool and apron patch each month for $5 per month per sibling, paid upfront. <strong>3FREE:</strong> appears only for the 12-month plan and takes $68.85 off the upfront price (you pay for 9 of the 12 months); new customers only, first term only.</p>
+    <p><strong>Limits:</strong> the calculator models US list prices only. It does not include taxes, gift pricing, one-off single-kit shop purchases, or the extra shipping fee Raddish charges outside the US. Ingredients are not included in the kits; Raddish emails a shopping list before each kit ships.</p>
+    <p class="privacy">Privacy: everything runs in your browser. Nothing you type is sent anywhere or stored.</p>
+  </section>
+
+  <section class="card faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">Common questions</h2>
+    <h3>How much does Raddish cost?</h3>
+    <p>$28.95 month to month, $155.70 upfront for 6 months ($25.95 per box), or $275.40 upfront for 12 months ($22.95 per box), per Raddish's plan page and checkout on November 26, 2026.</p>
+    <h3>Which plans include the free apron?</h3>
+    <p>The 6 and 12 month memberships include a free bonus apron. The monthly plan does not.</p>
+    <h3>What ages is Raddish for?</h3>
+    <p>Raddish says its clubs are for kids ages 4 to 14+. Younger kids cook alongside an adult; older kids can work more independently.</p>
+    <h3>Can I cancel?</h3>
+    <p>You can turn off the next auto-renewal at any time from your account. On a prepaid 6 or 12 month plan you keep receiving kits until the end of the prepaid period; the plan then renews unless you turned renewal off.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>We earn a commission when you buy through our links, at no extra cost to you. <a href="https://zozopeak.com">ZoZoPeak</a></p>
+  </div>
+</footer>
+
+<script src="calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var form = document.getElementById('calc-form');
+  var monthsField = document.getElementById('months-field');
+  var monthsInput = document.getElementById('months');
+  var monthsError = document.getElementById('months-error');
+  var planError = document.getElementById('plan-error');
+  var promoRow = document.getElementById('promo-row');
+  var promoBox = document.getElementById('promo3free');
+  var siblingBox = document.getElementById('sibling');
+  var results = document.getElementById('results');
+
+  function fmt(n) {
+    return '$' + n.toFixed(2);
+  }
+
+  function selectedPlan() {
+    var el = form.querySelector('input[name=plan]:checked');
+    return el ? el.value : null;
+  }
+
+  function showError(el, msg) {
+    if (msg) { el.textContent = msg; el.hidden = false; }
+    else { el.textContent = ''; el.hidden = true; }
+  }
+
+  function update() {
+    var plan = selectedPlan();
+    // toggle conditional fields
+    monthsField.hidden = plan !== 'monthly';
+    promoRow.hidden = plan !== 'twelve';
+    if (plan !== 'twelve') promoBox.checked = false;
+    // highlight selected plan card
+    var opts = document.querySelectorAll('.plan-option');
+    opts.forEach(function (o) {
+      o.classList.toggle('selected', o.querySelector('input').checked);
+    });
+
+    var res = RaddishCalc.compute({
+      plan: plan,
+      months: monthsInput.value,
+      sibling: siblingBox.checked,
+      promo3free: promoBox.checked
+    });
+
+    showError(planError, res.ok ? null : (res.errors.plan || null));
+    var mMsg = res.ok ? null : (res.errors.months || null);
+    showError(monthsError, plan === 'monthly' ? mMsg : null);
+    monthsInput.setAttribute('aria-invalid', (plan === 'monthly' && mMsg) ? 'true' : 'false');
+
+    if (!res.ok) { results.hidden = true; return; }
+
+    document.getElementById('r-total').textContent = fmt(res.total);
+    document.getElementById('r-perbox').textContent = fmt(res.perBox);
+    document.getElementById('r-permonth').textContent = fmt(res.monthlyEquiv);
+    document.getElementById('r-savings').textContent = res.savingsVsMonthly > 0.004 ? fmt(res.savingsVsMonthly) : '$0.00';
+    document.getElementById('r-note').textContent =
+      res.boxes + (res.boxes === 1 ? ' box' : ' boxes') + ' over ' + res.months +
+      (res.months === 1 ? ' month' : ' months') +
+      (res.promo3free ? ', with $68.85 off from promo 3FREE.' : '.');
+    results.hidden = false;
+  }
+
+  form.addEventListener('input', update);
+  form.addEventListener('change', update);
+  form.addEventListener('submit', function (e) { e.preventDefault(); update(); });
+  // Default selection: 12-month plan
+  form.querySelector('input[name=plan][value=twelve]').checked = true;
+  update();
+})();
+</script>
+</body>
+</html>
